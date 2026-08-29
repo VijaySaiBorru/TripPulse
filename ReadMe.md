@@ -6,7 +6,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-PAPER_ID-b31b1b.svg?logo=arxiv)](ARXIV_URL)
 
 <p align="center">
-    <img src="images/Picture1.png" width="100%"> <br>
+    <img src="images/Pic1.png" width="100%"> <br>
 </p>
 
 This is the official implementation of **TripPulse**, a neuro-symbolic multi-agent framework for personalized, spatio-temporal travel planning with review-grounded reasoning.
