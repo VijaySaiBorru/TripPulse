@@ -486,8 +486,10 @@ Run the constraint evaluation from the `evaluation` directory:
 
 ```bash
 cd evaluation
+```
 
 Then run:
+```bash
 
 python eval.py \
     --set_type <3d/5d/7d> \
@@ -498,7 +500,7 @@ For example:
 python eval.py \
     --set_type 3d \
     --evaluation_file_path <path_to_generated_jsonl>
-
+```
 The --set_type argument specifies the trip duration:
 
 3d  → 3-day itinerary
@@ -509,7 +511,7 @@ The --set_type argument specifies the trip duration:
 Qualitative evaluation measures the quality of the generated itinerary against the corresponding golden plan.
 
 Run:
-
+```bash
 python qualitative_metrics.py \
     --anno_file <golden plan file path> \
     --gen_file <path to our file>
@@ -519,7 +521,7 @@ For example:
 python qualitative_metrics.py \
     --anno_file <path_to_golden_plan> \
     --gen_file <path_to_generated_jsonl>
-
+```
 The --anno_file argument specifies the golden/reference plan, while --gen_file specifies the generated itinerary file.
 
 ## ⭐ Review-Grounded Persona Alignment (RGPA)
