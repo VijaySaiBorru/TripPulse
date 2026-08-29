@@ -262,8 +262,7 @@ create_csv_with_pro_cons.py
 phi4_3day_with_pc_final.jsonl         
 qwen2.5_7day_llm.jsonl                
 tripcraft_7day_review_inputs.tsv
-create_csv_with_review.py              
-jsonl.py                               
+create_csv_with_review.py                                           
 phi4_3day_with_pc_llm_final.jsonl     
 qwen2.5_7day_llm_rerun.jsonl          
 create_tsv_with_pro_cons_pk.py         
@@ -324,4 +323,3 @@ evaluation/llama_llm_eval_7day.tsv
 evaluation/prompt_tsv.py
 evaluation/prompt.py
 evaluation/prompt.txt
-
