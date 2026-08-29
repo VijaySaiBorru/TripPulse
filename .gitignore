@@ -285,8 +285,7 @@ qwen2.5_7day_z3_poi.jsonl
 tripcraft_metrics.py
 deepseek_3day_final.jsonl              
 llama_3day_with_pc_llm_final.jsonl     
-phi4_5day_llm_review_final.jsonl      
-README.md                             
+phi4_5day_llm_review_final.jsonl                              
 4tripcraftvijay.yml
 deepseek_3day_llm_final.jsonl          
 llama_5day_final.jsonl                 
