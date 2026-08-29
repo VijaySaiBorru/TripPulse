@@ -450,41 +450,30 @@ This backend is designed to guarantee constraint satisfaction during final sched
 
 # 🔄 Postprocessing
 
-Generated itineraries are converted into the structured format required by the TripCraft evaluation pipeline.
+After the itinerary generation stage is complete, the generated outputs must be converted into the JSONL format required by the TripCraft evaluation pipeline.
 
-The postprocessing stage converts the generated natural-language itinerary into structured JSON containing the required itinerary fields.
-
-The resulting file should follow the expected TripCraft evaluation format.
-
-Example:
+Run the postprocessing script using the corresponding model and trip duration:
 
 ```bash
-python <POSTPROCESS_SCRIPT>.py \
-    --input <GENERATED_OUTPUT> \
-    --output <STRUCTURED_OUTPUT>
-```
-
-> Replace the command above with the exact postprocessing command provided in this repository.
+python jsonl.py --model <model_name> --day <3/5/7>
 
 # ⚡ Evaluation
 
-TripPulse is evaluated using three major groups of metrics.
+After postprocessing, the generated JSONL files are evaluated using two types of metrics:
 
-## 📌 Constraint Satisfaction
+1. **Constraint Metrics**
+2. **Qualitative Metrics**
 
-We report:
+## 📌 Constraint Metrics
+
+Constraint metrics evaluate whether the generated itineraries satisfy the structural, temporal, spatial, and hard constraints defined by the TripCraft benchmark.
+
+The evaluation reports:
 
 * **Delivery Rate (Del)**
 * **Commonsense Pass Rate — Micro (CPRμ)**
 * **Hard Constraint Pass Rate — Micro (HCPRμ)**
 * **Final Pass Rate (FPR)**
-
-These metrics measure whether generated itineraries satisfy the structural and hard constraints defined by the benchmark.
-
-## 📐 Temporal & Structural Metrics
-
-We report:
-
 * **Temporal Meal Score (Tm)**
 * **Temporal Attraction Score (Ta)**
 * **Normalized Temporal Attraction Score (T̃a)**
@@ -492,21 +481,45 @@ We report:
 * **Persona Alignment Score (Sp)**
 * **Ordering Score (So)**
 
-Run the standard TripCraft evaluation using:
+Run the constraint evaluation from the `evaluation` directory:
 
 ```bash
 cd evaluation
 
+Then run:
+
 python eval.py \
-    --set_type <SET_TYPE> \
-    --evaluation_file_path <EVALUATION_FILE>
-```
+    --set_type <3d/5d/7d> \
+    --evaluation_file_path <path to file>
 
-where:
+For example:
 
-```text
-SET_TYPE = 3d / 5d / 7d
-```
+python eval.py \
+    --set_type 3d \
+    --evaluation_file_path <path_to_generated_jsonl>
+
+The --set_type argument specifies the trip duration:
+
+3d  → 3-day itinerary
+5d  → 5-day itinerary
+7d  → 7-day itinerary
+📐 Qualitative Metrics
+
+Qualitative evaluation measures the quality of the generated itinerary against the corresponding golden plan.
+
+Run:
+
+python qualitative_metrics.py \
+    --anno_file <golden plan file path> \
+    --gen_file <path to our file>
+
+For example:
+
+python qualitative_metrics.py \
+    --anno_file <path_to_golden_plan> \
+    --gen_file <path_to_generated_jsonl>
+
+The --anno_file argument specifies the golden/reference plan, while --gen_file specifies the generated itinerary file.
 
 ## ⭐ Review-Grounded Persona Alignment (RGPA)
 
