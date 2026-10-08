@@ -137,7 +137,7 @@ The dataset includes:
 
 The **TripPulse augmented dataset** is available at the following Google Drive link:
 
-👉 **[Download the TripPulse Augmented Dataset](GOOGLE_DRIVE_LINK)**
+👉 **[Download the TripPulse Augmented Dataset]([GOOGLE_DRIVE_LINK](https://drive.google.com/drive/folders/1B-huuQ0IYBrMANoOkuWl1qKbIXnjEp3N?usp=sharing))**
 
 After downloading, extract the dataset into the following directory:
 
