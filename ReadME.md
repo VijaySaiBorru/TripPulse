@@ -629,15 +629,17 @@ Constraint-Valid Itinerary
 If you use TripPulse in your research, please cite:
 
 ```bibtex
-@inproceedings{<TRIPPULSE_CITATION_KEY>,
-  title={TripPulse: Multi-Agent Travel Planning with Review-Grounded Reasoning},
-  author={<AUTHORS>},
-  booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing},
-  year={2026}
+@misc{karmakar2026trippulsemultiagenttravelplanning,
+      title={TRIPPULSE: Multi-Agent Travel Planning with Review-Grounded Reasoning}, 
+      author={Priyanshu Karmakar and Borru Vijay Sai and Shubhojit Mallick and Abhik Jana and Shreya Ghosh and Manish Gupta},
+      year={2026},
+      eprint={2608.30924},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2608.30924}, 
 }
 ```
 
-Please replace the placeholder citation information above with the final camera-ready BibTeX entry.
 
 # 🙏 Acknowledgements
 
